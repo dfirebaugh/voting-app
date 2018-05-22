@@ -9,13 +9,14 @@ class NavMenu extends Component {
         {/* Welcome to Hack Points<span id="display-name"></span>! */}
         <a className="menu" href="/">Home</a>
         |
-      {/* <a className="menu" href="/browse">Browse</a>
+       <a className="menu" href="/browse">Browse</a>
         |
-      <a className="menu" href="/create">Create</a>
+        <a className="menu" href='/logout'>Logout</a> 
+      {/*<a className="menu" href="/create">Create</a>
         |
-      <a className="menu" href="/profile">Profile</a>
+        <a className="menu" href="/profile">Profile</a>
         |
-      <a className="menu" href='/logout'>Logout</a> */}
+    */}
 
         <style jsx>{`
               .menu-container {

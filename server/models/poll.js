@@ -23,12 +23,6 @@ const PollSchema = new Schema({
   title: String,
   createdBy: String,
   topics: [TopicSchema]
-  
-  // [{
-  //   topicid: Number,
-  //   name:String, 
-  //   votes:Number
-  // }]
 });
 
 module.exports = mongoose.model('Poll', PollSchema);

@@ -11,6 +11,7 @@ const Login = () => (
     // Wrap your page inside <Theme> HOC to get bootstrap styling.
     // Theme can also be omitted if react-bootstrap components are not used.
     <Theme>
+        {console.log(process.env.APP_URL)}
         <div className="container">
             <div className="jumbotron login">
                 <img src="/Hackrobot.jpg" />

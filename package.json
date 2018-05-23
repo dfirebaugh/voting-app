@@ -93,7 +93,8 @@
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.0.0",
-    "sass-loader": "^6.0.6"
+    "sass-loader": "^6.0.6",
+    "webpack": "^4.8.3"
   },
   "devDependencies": {
     "eslint": "^4.10.0",

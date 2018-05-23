@@ -16,7 +16,7 @@ class Browse extends Component {
         this.getPolls();
     }
     getUser = () => {
-        fetch(`http://localhost:8080/api/v1/users/currentUser/`, { credentials: 'same-origin' })
+        fetch(`/api/v1/users/currentUser/`, { credentials: 'same-origin' })
           .then((response) => response.json())
           .then((responseJson) => {
             this.setState({ currentUser: responseJson })
@@ -26,7 +26,7 @@ class Browse extends Component {
         });
     }
     getPolls = () => {
-        fetch(`http://localhost:8080/api/v1/polls/`, { credentials: 'same-origin' })
+        fetch(`/api/v1/polls/`, { credentials: 'same-origin' })
           .then((response) => response.json())
           .then((responseJson) => {
             this.setState({ polls: responseJson })

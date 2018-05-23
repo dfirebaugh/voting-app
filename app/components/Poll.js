@@ -14,7 +14,7 @@ class Poll extends Component {
         const topicArr = this.state.topics.map(x => x.topic)
         const topicIndex = topicArr.indexOf(topic.topic)
         
-        fetch(`http://localhost:8080/api/v1/polls/${poll._id}/${topic.topic}/vote`, { method: 'post', credentials: 'same-origin' })
+        fetch(`/api/v1/polls/${poll._id}/${topic.topic}/vote`, { method: 'post', credentials: 'same-origin' })
         .then(()=>{
             const incrementedTopics = this.state.topics.map( (curTopic,index) => {
                 if(topicIndex === index) {
@@ -32,7 +32,7 @@ class Poll extends Component {
         this.forceUpdate()
         console.log(pollId)
 
-        fetch(`http://localhost:8080/api/v1/polls/${this.props.i._id}/${this.state.inputValue}/new`, {
+        fetch(`/api/v1/polls/${this.props.i._id}/${this.state.inputValue}/new`, {
             method: 'POST',
             credentials: 'same-origin'
       })

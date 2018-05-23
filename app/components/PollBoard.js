@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Poll from './Poll';
 
+
 const polls = (arr, fn) => arr.map((i, index) => <Poll i={i} update={fn} />);
 
 class PollBoard extends Component {
@@ -23,7 +24,7 @@ class PollBoard extends Component {
       })
 
       console.log(bodyData)
-      fetch(`http://localhost:8080/api/v1/polls/`, {
+      fetch(`/api/v1/polls/`, {
         method: 'POST',
         credentials: 'same-origin',
         headers: {

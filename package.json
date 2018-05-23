@@ -93,6 +93,7 @@
     "react": "^16.0.0",
     "react-bootstrap": "^0.31.5",
     "react-dom": "^16.0.0",
+    "remove": "^0.1.5",
     "sass-loader": "^6.0.6",
     "webpack": "^4.8.3"
   },

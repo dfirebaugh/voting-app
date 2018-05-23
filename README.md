@@ -21,3 +21,5 @@ You will need to setup an oauth token with [github](https://developer.github.com
 
 
 * run `npm run dev` to spin up the webserver
+
+ [demo](https://voting-app-df.herokuapp.com/)

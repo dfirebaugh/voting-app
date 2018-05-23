@@ -18,7 +18,7 @@ module.exports = function (app, passport) {
         .get((req, res) => {
             const polls = Poll.find({}, (err, doc) => { res.send(doc); });
         })
-        .post((req, res) => {
+        .post(isLoggedIn, (req, res) => {
 			console.log(req.body);
 
 			const newPoll = new Poll({
@@ -54,7 +54,8 @@ module.exports = function (app, passport) {
 		   }, (err, poll) => {
 			   if (err) { res.send(err); }
 
-			   res.json({ message: 'Successfully deleted' });
+               res.json({ message: 'Successfully deleted' }).end();
+            //    res.status(200).end();
 		   });
         })
         .put(isLoggedIn, (req, res) => {

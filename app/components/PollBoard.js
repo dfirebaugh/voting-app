@@ -23,7 +23,6 @@ class PollBoard extends Component {
         createdBy: this.props.user.userName
       })
 
-      console.log(bodyData)
       fetch(`/api/v1/polls/`, {
         method: 'POST',
         credentials: 'same-origin',

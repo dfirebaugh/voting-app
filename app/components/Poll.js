@@ -19,7 +19,6 @@ class Poll extends Component {
             const incrementedTopics = this.state.topics.map( (curTopic,index) => {
                 if(topicIndex === index) {
                     curTopic.votes += 1;
-                    console.log(curTopic.votes)
                 }
                 return curTopic 
                 
@@ -29,8 +28,6 @@ class Poll extends Component {
         })
     }
     handleNewTopic = (pollId) => {
-        this.forceUpdate()
-        console.log(pollId)
 
         fetch(`/api/v1/polls/${this.props.i._id}/${this.state.inputValue}/new`, {
             method: 'POST',
@@ -46,6 +43,22 @@ class Poll extends Component {
         this.setState({inputValue: e.target.value})
         
       }
+    deletePoll = (pollId) => {
+        
+        fetch(`/api/v1/polls/${pollId}/`, {
+            method: 'DELETE',
+            credentials: 'same-origin',
+            headers: {
+                "Content-type": "application/json"
+              },
+            body: JSON.stringify({ _id: pollId })
+      }
+    )
+      .then(response => response.json())
+      .then(()=> {
+        window.location.reload()
+      })
+    }
     
     render() {
       const i = this.props.i;
@@ -54,6 +67,7 @@ class Poll extends Component {
         <div className='flex'>
             <h3 className="title border">{i.title ? i.title : 'no title'} </h3>
             <button className='new-topic-btn' onClick={()=>this.setState({toggleVisibleTopic:!this.state.toggleVisibleTopic})}>create a new topic +</button>
+            <button className='btn-danger' onClick={() => this.deletePoll(i._id)}> DELETE</button>
             {this.state.toggleVisibleTopic &&
                 <div >
                     <input type="text" 

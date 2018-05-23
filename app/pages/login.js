@@ -18,7 +18,7 @@ const Login = () => (
                 <br />
                 <a href="/auth/github">
                     <div className="btn" id="login-btn">
-                        <img src="/GitHub-Mark-64px.png" alt="github logo" />
+                        {/* <img src="/GitHub-Mark-64px.png" alt="github logo" /> */}
                         <p>LOGIN WITH Github</p>
                     </div>
                 </a>

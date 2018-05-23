@@ -36,8 +36,8 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.json());
 // app.use(cookieParser());
 app.use('/', express.static(path.join(__dirname, 'public')));
 
@@ -46,7 +46,7 @@ const start = async (port) => {
     // Couple Next.js with our express server.
     // app and handle from "next" will now be available as req.app and req.handle.
     await next(app);
-
+    
     // Normal routing, if you need it.
     // Use your SSR logic here.
     // Even if you don't do explicit routing the pages inside app/pages

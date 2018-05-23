@@ -2,9 +2,12 @@ import React, { Component } from 'react';
 
 
 class Poll extends Component {
+    constructor(){
+        super();
+        this.state = { inputValue: ''}
+    }
     componentWillMount() {
         this.setState({topics: this.props.i.topics})
-        console.log('state: ' , this.state)
     }
 
     postVote = (poll,topic) => {
@@ -26,17 +29,41 @@ class Poll extends Component {
         })
     }
     handleNewTopic = (pollId) => {
+        this.forceUpdate()
         console.log(pollId)
+
+        fetch(`http://localhost:8080/api/v1/polls/${this.props.i._id}/${this.state.inputValue}/new`, {
+            method: 'POST',
+            credentials: 'same-origin'
+      })
+      .then(()=>{
+        this.setState({inputValue: '', toggleNewPoll:false})
+        window.location.reload()
+      })
+
     }
+    handleInputChange = (e) => {
+        this.setState({inputValue: e.target.value})
+        
+      }
     
     render() {
       const i = this.props.i;
-      console.log('render')
       return (
           <div className='topic-container container'>
         <div className='flex'>
             <h3 className="title border">{i.title ? i.title : 'no title'} </h3>
-            <button className='new-topic-btn' onClick={()=> this.handleNewTopic(i._id)}>create a new topic +</button>
+            <button className='new-topic-btn' onClick={()=>this.setState({toggleVisibleTopic:!this.state.toggleVisibleTopic})}>create a new topic +</button>
+            {this.state.toggleVisibleTopic &&
+                <div >
+                    <input type="text" 
+                        value={this.state.inputValue} 
+                        placeholder="title" 
+                        onChange={(e) => this.handleInputChange(e)} />
+
+                    <button onClick={()=>this.handleNewTopic(i._id)}>Add Topic</button>
+                </div>
+            }
         </div>
             <ul className='topic-list '>
                 { i.topics.map( (x, index )=> 

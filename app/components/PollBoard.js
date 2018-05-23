@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Poll from './Poll';
 
 
-const polls = (arr, fn) => arr.map((i, index) => <Poll i={i} update={fn} />);
+const polls = (arr, fn) => arr.map((i, index) => <Poll key={i+index} i={i} update={fn} />);
 
 class PollBoard extends Component {
     constructor() {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+// import PieChart from './PieChart';
+import PieChart from "react-svg-piechart";
 
 class Poll extends Component {
     constructor(){
@@ -62,6 +63,14 @@ class Poll extends Component {
     
     render() {
       const i = this.props.i;
+      const colors = ['#e6194b','#3cb44b','#ffe119','#0082c8','#f58231','#911eb4','#46f0f0','#f032e6','#d2f53c','#fabebe','#008080']
+      const pieArr = i.topics.map((curTopic, index) => {
+          curTopic.value = curTopic.votes;
+          curTopic.color = colors[index]; 
+          //TODO: fix problem where we run out of colors
+          return curTopic;
+      })
+      
       return (
           <div className='topic-container container'>
         <div className='flex'>
@@ -93,8 +102,13 @@ class Poll extends Component {
                 )
                 )
                 }
-                    
-                <img className='test-image' src='http://2.bp.blogspot.com/-Z91ERKuYPM8/U8zkv7Ac9eI/AAAAAAAAWkA/MyXgCSw8jIE/s1600/Chuck+Norris+can+delete+the+Recycling+Bin.jpg' />
+                <div className='pie col-md-8'>
+                {/* TODO: add data layover on hover */}
+                   <PieChart
+                        expandOnHover={true} 
+                        data={pieArr}/>
+                   </div> 
+                {/* <img className='test-image' src='http://2.bp.blogspot.com/-Z91ERKuYPM8/U8zkv7Ac9eI/AAAAAAAAWkA/MyXgCSw8jIE/s1600/Chuck+Norris+can+delete+the+Recycling+Bin.jpg' /> */}
             </ul>
             <style jsx>{`
                 .vote-container{
@@ -102,6 +116,10 @@ class Poll extends Component {
                     // border:red 1px solid;
                     // text-align:center;
                     width: 100%;
+                }
+                .pie{
+                    width:30%;
+                    margin-left:30%;
                 }
                 flex{
                     display:flexbox;

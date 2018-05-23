@@ -14,11 +14,11 @@ const Login = () => (
         {console.log(process.env.APP_URL)}
         <div className="container">
             <div className="jumbotron login">
-                <img src="/Hackrobot.jpg" />
+                {/* <img src="/Hackrobot.jpg" /> */}
                 <br />
                 <a href="/auth/github">
                     <div className="btn" id="login-btn">
-                        {/* <img src="/GitHub-Mark-64px.png" alt="github logo" /> */}
+                        <img src="/GitHub-Mark-64px.png" alt="github logo" />
                         <p>LOGIN WITH Github</p>
                     </div>
                 </a>

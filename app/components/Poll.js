@@ -102,14 +102,14 @@ class Poll extends Component {
                 )
                 )
                 }
+                {/* <img className='test-image' src='http://2.bp.blogspot.com/-Z91ERKuYPM8/U8zkv7Ac9eI/AAAAAAAAWkA/MyXgCSw8jIE/s1600/Chuck+Norris+can+delete+the+Recycling+Bin.jpg' /> */}
+            </ul>
                 <div className='pie col-md-8'>
                 {/* TODO: add data layover on hover */}
                    <PieChart
                         expandOnHover={true} 
                         data={pieArr}/>
                    </div> 
-                {/* <img className='test-image' src='http://2.bp.blogspot.com/-Z91ERKuYPM8/U8zkv7Ac9eI/AAAAAAAAWkA/MyXgCSw8jIE/s1600/Chuck+Norris+can+delete+the+Recycling+Bin.jpg' /> */}
-            </ul>
             <style jsx>{`
                 .vote-container{
                     display:flex;
@@ -118,8 +118,8 @@ class Poll extends Component {
                     width: 100%;
                 }
                 .pie{
-                    width:30%;
-                    margin-left:30%;
+                    width:60%;
+                    // margin-left:30%;
                 }
                 flex{
                     display:flexbox;

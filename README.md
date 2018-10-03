@@ -18,7 +18,7 @@ This is a simple Universal JavaScript application for voting on topics.
     >
     > APP_URL=http://localhost:8080/
 
-You will need to setup an oauth token with [github](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/)
+You will need to setup an oauth token with [GitHub](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/)
 
 * run `npm run dev` to spin up the webserver
 

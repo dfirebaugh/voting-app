@@ -1,6 +1,6 @@
 # Voting-App
 
-This is a simple Universal Javascript application for voting on topics.
+This is a simple Universal JavaScript application for voting on topics.
 
 ### Project setup
 

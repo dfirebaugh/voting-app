@@ -3,15 +3,13 @@ This is a simple Universal Javascript application for voting on topics.
 
 
 ### Project setup:
-* Download mongodb
-* start `mongod --dbpath=<path to data>`  make sure this continues to run in the background
-* navigate to project root and run `npm install` to install dependencies
+* Download [docker](https://www.docker.com/get-started) to run this project.
 * create a `.env` to store environmental variables:
     > GITHUB_KEY=
     >
     > GITHUB_SECRET=
     >
-    > MONGO_URI=mongodb://localhost:27017/dbname
+    > MONGO_URI=mongodb://database:27017/dbname
     >
     > PORT=8080
     >
@@ -20,6 +18,6 @@ This is a simple Universal Javascript application for voting on topics.
 You will need to setup an oauth token with [github](https://developer.github.com/apps/building-oauth-apps/authorizing-oauth-apps/)
 
 
-* run `npm run dev` to spin up the webserver
+* Run `docker-compose up` to build the containers
 
  [demo](https://voting-app-df.herokuapp.com/)
